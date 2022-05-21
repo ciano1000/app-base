@@ -2,29 +2,36 @@
 <N10X>
 	<Workspace>
 		<FileTypes>All Code Files</FileTypes>
-		<ExcludeFilters></ExcludeFilters>
+		<ExcludeFilters>run.sh,exec_sh.bat,local,build.sh</ExcludeFilters>
 		<SyncFiles>true</SyncFiles>
 		<Recursive>true</Recursive>
 		<IsVirtual>false</IsVirtual>
 		<IsFolder>false</IsFolder>
-		<BuildCommand>build</BuildCommand>
+		<BuildCommand>build $(Configuration)</BuildCommand>
 		<RebuildCommand></RebuildCommand>
 		<BuildFileCommand></BuildFileCommand>
 		<CleanCommand></CleanCommand>
-		<RunCommand>call .\build\app-base.exe</RunCommand>
+		<RunCommand>./build/app-base.exe</RunCommand>
 		<DebugCommand></DebugCommand>
-		<ExePathCommand></ExePathCommand>
+		<ExePathCommand>./build</ExePathCommand>
 		<DebugSln></DebugSln>
 		<Configurations>
 			<Configuration>Debug</Configuration>
 			<Configuration>Release</Configuration>
+			<Configuration>Test</Configuration>
 		</Configurations>
 		<Platforms>
 			<Platform>x64</Platform>
 			<Platform>Win32</Platform>
 		</Platforms>
 		<AdditionalIncludePaths></AdditionalIncludePaths>
-		<Defines></Defines>
+		<Defines>
+			<Define>__clang__</Define>
+			<Define>_MSC_VER</Define>
+			<Define>_WIN64</Define>
+			<Define> __gnu_linux__</Define>
+			<Define>__GNUC__</Define>
+		</Defines>
 		<ConfigProperties>
 			<ConfigAndPlatform>
 				<Name>Debug:x64</Name>
@@ -40,6 +47,10 @@
 				<Defines></Defines>
 			</Platform>
 		</ConfigProperties>
-		<Children></Children>
+		<Children>
+			<File>
+				<Path>.gitignore</Path>
+			</File>
+		</Children>
 	</Workspace>
 </N10X>
