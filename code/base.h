@@ -42,11 +42,18 @@ typedef int64_t 	s64;
 typedef float 		f32;
 typedef double  	f64;
 
+#define null 0
+
 //Generic Macro Utilities - macros prepended with "_" are only intended for use within other macros
 #define _TokenPaste_(x, y) x##y				//Concatenate as a token, not a string
 #define _TokenCat_(x,y) TOKEN_PASTE(x,y)	//Concatenate preproc strings
 #define _DeferLoop_(begin, end, var) for (u32 var = (begin, 0); !var; ++var, end)	//Replicate basic odin/jai/golang like "defer" functionality
 #define ArrayCount(array) (sizeof(array) / sizeof(array[0])) //get num items in a static array
+#define Kilobyte(x) (x << 10)
+#define Megabyte(x) (x << 20)
+#define Gigabyte(x) ((u64)(x) << 30)
+#define Terabyte(x) ((u64)(x) << 40)
+
 //Constants
 #define UNIQUE_INT CAT(prefix, __COUNTER__)	//Technically not a constant but whatever
 
